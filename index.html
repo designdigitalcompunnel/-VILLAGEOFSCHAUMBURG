@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Website concept for the Village of Schaumburg — services, government, community, culture and economic development.">
+  <title>Village of Schaumburg | Your Village. Your Vibe.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header" id="header">
+  <a class="brand" href="index.html" aria-label="Village of Schaumburg home">
+    <img src="assets/images/schaumburg-logo.png" alt="Village of Schaumburg">
+  </a>
+
+  <nav class="desktop-nav" aria-label="Main navigation">
+    <div class="nav-item"><a class="nav-main-link" href="services.html">SERVICES <span>+</span></a>
+      <div class="mega">
+        <a href="#services">Pay &amp; Bills</a><a href="services.html">Permits &amp; Licenses</a><a href="#services">Report an Issue</a><a href="#services">Online Services</a>
+      </div>
+    </div>
+    <div class="nav-item"><a class="nav-main-link" href="#government">GOVERNMENT <span>+</span></a>
+      <div class="mega">
+        <a href="#government">Village Board</a><a href="#government">Meetings &amp; Agendas</a><a href="#government">Departments</a><a href="#government">Transparency</a>
+      </div>
+    </div>
+    <div class="nav-item"><a class="nav-main-link" href="#community">COMMUNITY <span>+</span></a>
+      <div class="mega">
+        <a href="#community">Residents</a><a href="#community">Parks &amp; Recreation</a><a href="#community">Resources</a><a href="#community">New Residents</a>
+      </div>
+    </div>
+    <div class="nav-item"><a class="nav-main-link" href="#portfolio">EXPLORE <span>+</span></a>
+      <div class="mega">
+        <a href="#portfolio">Al Larson Cultural Center</a><a href="#portfolio">90 North</a><a href="#portfolio">Events</a><a href="#portfolio">Places to Explore</a>
+      </div>
+    </div>
+    <div class="nav-item"><a class="nav-main-link" href="#business">BUSINESS</a></div>
+  </nav>
+
+  <div class="header-actions">
+    <button class="search-trigger" id="searchTrigger" aria-label="Open site search">SEARCH <span>⌕</span></button>
+    <a class="header-cta" href="services.html">SERVICE HUB</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="search-panel" id="searchPanel" aria-hidden="true">
+  <div class="search-inner">
+    <button class="search-close" id="searchClose" aria-label="Close search">×</button>
+    <p class="eyebrow">VILLAGE OF SCHAUMBURG INFORMATION SEARCH</p>
+    <h2>What can we<br><span>help you find?</span></h2>
+    <form id="searchForm">
+      <label class="sr-only" for="siteSearch">Search Schaumburg</label>
+      <input id="siteSearch" type="search" placeholder="Search services, documents, meetings, events…" autocomplete="off">
+      <button type="submit">SEARCH →</button>
+    </form>
+    <p class="search-note">Search across Village information, services, documents, events and news.</p>
+    <div id="searchResult" class="search-result" aria-live="polite"></div>
+  </div>
+</div>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero-image"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="eyebrow">VILLAGE OF SCHAUMBURG · ILLINOIS</p>
+    <h1>FIND IT. DO IT.<br><em>LIVE IT.</em></h1>
+    <p class="hero-copy">A simpler way to connect with Village services, community information, events, culture and opportunities across Schaumburg.</p>
+    <div class="hero-search">
+      <label for="heroSearch">What are you looking for?</label>
+      <div class="hero-search-box">
+        <input id="heroSearch" type="search" placeholder="Try “water bill”, “permit”, “events” or “report a problem”">
+        <button id="heroSearchBtn" type="button">SEARCH →</button>
+      </div>
+    </div>
+    <div class="hero-buttons">
+      <a class="btn btn-green" href="services.html">FIND A SERVICE</a>
+      <a class="btn btn-light" href="#portfolio">EXPLORE SCHAUMBURG</a>
+    </div>
+  </div>
+  <div class="hero-badge"><span>ESTABLISHED</span><b>1956</b><small>70 YEARS</small></div>
+  <div class="hero-scroll">SCROLL TO EXPLORE <span></span></div>
+</section>
+
+<section class="quick section" id="quick">
+  <div class="section-kicker">01 / QUICK ACCESS</div>
+  <div class="quick-head">
+    <div>
+      <h2>Start with<br><span>what you need.</span></h2>
+      <p>Get to the tasks residents and visitors come to Schaumburg to complete — without needing to know which department manages them.</p>
+    </div>
+    <div class="quick-image" role="img" aria-label="Schaumburg community and municipal setting"></div>
+  </div>
+  <div class="quick-grid">
+    <a href="services.html" class="quick-card"><span>01</span><div><b>PAY A BILL</b><small>Water, services and other Village payments</small></div><i>↗</i></a>
+    <a href="services.html" class="quick-card"><span>02</span><div><b>GET A PERMIT</b><small>Find residential and business permit information</small></div><i>↗</i></a>
+    <a href="services.html" class="quick-card"><span>03</span><div><b>REPORT A PROBLEM</b><small>Submit a customer service request or get help</small></div><i>↗</i></a>
+    <a href="#government" class="quick-card"><span>04</span><div><b>FIND A MEETING</b><small>View meetings, agendas, minutes and public information</small></div><i>↗</i></a>
+  </div>
+</section>
+
+<section class="services section" id="services">
+  <div class="section-head">
+    <div><div class="section-kicker">02 / VILLAGE SERVICES</div><h2>Services built<br><span>around you.</span></h2></div>
+    <p>Organized around user intent, the new experience helps people find, understand and complete common Village tasks faster.</p>
+  </div>
+  <div class="service-grid">
+    <article class="service-card featured"><div class="service-icon">◎</div><div><span>01</span><h3>PAYMENTS &amp;<br>BILLING</h3><p>Find WebPay, water billing information, automatic payment options and other Village payment resources.</p></div><a href="services.html">EXPLORE SERVICE →</a></article>
+    <article class="service-card"><div class="service-icon">□</div><div><span>02</span><h3>PERMITS &amp;<br>LICENSES</h3><p>Start with the permit or license you need, understand requirements and move to the right application.</p></div><a href="services.html">EXPLORE SERVICE →</a></article>
+    <article class="service-card"><div class="service-icon">!</div><div><span>03</span><h3>REPORT AN<br>ISSUE</h3><p>Use Customer Service Requests to report non-emergency issues such as potholes or streetlight outages.</p></div><a href="services.html">EXPLORE SERVICE →</a></article>
+    <article class="service-card"><div class="service-icon">▤</div><div><span>04</span><h3>DOCUMENTS &amp;<br>RECORDS</h3><p>Find meeting packets, minutes, ordinances, resolutions, reports and other public information.</p></div><a href="services.html">EXPLORE SERVICE →</a></article>
+    <article class="service-card"><div class="service-icon">◷</div><div><span>05</span><h3>MEETINGS &amp;<br>AGENDAS</h3><p>Discover Village Board and committee meetings, agendas, minutes and public participation information.</p></div><a href="services.html">EXPLORE SERVICE →</a></article>
+    <article class="service-card"><div class="service-icon">+</div><div><span>06</span><h3>RESIDENT<br>RESOURCES</h3><p>Explore utilities, transportation, recycling, community assistance and other everyday resources.</p></div><a href="#community">EXPLORE RESOURCE →</a></article>
+  </div>
+</section>
+
+<section class="split-feature" id="government">
+  <div class="split-image government-image"></div>
+  <div class="split-copy">
+    <div class="section-kicker">03 / GOVERNMENT &amp; TRANSPARENCY</div>
+    <h2>Open.<br><span>Accessible.</span><br>Connected.</h2>
+    <p>The digital experience should make Village government easier to understand and use — from Board information and meetings to departments, reports, records and public engagement.</p>
+    <div class="feature-links">
+      <a href="#government">VILLAGE BOARD &amp; LEADERSHIP <b>↗</b></a>
+      <a href="#government">MEETINGS, AGENDAS &amp; MINUTES <b>↗</b></a>
+      <a href="#government">DOCUMENT ARCHIVE &amp; REPORTS <b>↗</b></a>
+      <a href="#government">CONTACT &amp; 311 <b>↗</b></a>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio section" id="portfolio">
+  <div class="section-head dark-head">
+    <div><div class="section-kicker">04 / ONE DIGITAL ECOSYSTEM</div><h2>Three destinations.<br><span>One Schaumburg.</span></h2></div>
+    <p>The RFP calls for a coordinated digital portfolio while preserving the distinct identity, voice and experience of each property.</p>
+  </div>
+  <div class="portfolio-grid">
+    <article class="portfolio-card">
+      <div class="portfolio-image village-image"></div>
+      <div class="portfolio-body"><span>01 / VILLAGE</span><h3>Village of Schaumburg</h3><p>Government, services, residents, community information and public resources.</p><a href="#services">EXPLORE VILLAGE →</a></div>
+    </article>
+    <article class="portfolio-card">
+      <div class="portfolio-image culture-image"></div>
+      <div class="portfolio-body"><span>02 / CULTURE</span><h3>Al Larson Cultural Center</h3><p>Performances, programming, ticketing, events and cultural experiences.</p><a href="#culture">EXPLORE CULTURE →</a></div>
+    </article>
+    <article class="portfolio-card" id="business">
+      <div class="portfolio-image business-image"></div>
+      <div class="portfolio-body"><span>03 / ECONOMIC DEVELOPMENT</span><h3>90 North</h3><p>Investment, development, location advantages, opportunities and district identity.</p><a href="#business">EXPLORE 90 NORTH →</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="community section" id="community">
+  <div class="community-image"></div>
+  <div class="community-copy">
+    <div class="section-kicker">05 / COMMUNITY</div>
+    <h2>A place to<br><span>live, work &amp; belong.</span></h2>
+    <p>Schaumburg brings together strong Village services, parks and recreation, cultural experiences, transportation options, community programs and a vibrant everyday life.</p>
+    <div class="audience-links">
+      <a href="#community">FOR RESIDENTS <b>→</b></a>
+      <a href="#business">FOR BUSINESS <b>→</b></a>
+      <a href="#portfolio">FOR VISITORS <b>→</b></a>
+    </div>
+  </div>
+</section>
+
+<section class="culture section" id="culture">
+  <div class="culture-grid">
+    <div class="culture-copy">
+      <div class="section-kicker">06 / CULTURE &amp; EXPERIENCES</div>
+      <h2>Discover<br><span>what's happening.</span></h2>
+      <p>Bring event discovery into the wider Schaumburg experience while keeping the Al Larson Cultural Center's programming and ticketing journey distinct and focused.</p>
+      <div class="culture-actions">
+        <a class="btn btn-green" href="#news">VIEW EVENTS</a>
+        <a class="btn btn-dark" href="#portfolio">AL LARSON CULTURAL CENTER</a>
+      </div>
+    </div>
+    <div class="culture-image"></div>
+  </div>
+</section>
+
+<section class="news section" id="news">
+  <div class="section-head">
+    <div><div class="section-kicker">07 / NEWS &amp; EVENTS</div><h2>Stay<br><span>informed.</span></h2></div>
+    <a class="text-link" href="#news">VIEW ALL NEWS &amp; EVENTS ↗</a>
+  </div>
+  <div class="news-grid">
+    <article class="news-card main-news"><div class="news-image festival"></div><div class="news-body"><span>COMMUNITY · EVENTS</span><h3>Farmers Market, community programs and local experiences — surfaced where people are looking for them.</h3><a href="#news">EXPLORE EVENTS →</a></div></article>
+    <div class="event-list">
+      <article><span>VILLAGE GOVERNMENT</span><time>OCT 2026</time><h3>Village Board and committee meetings</h3><a href="#government">VIEW MEETINGS →</a></article>
+      <article><span>COMMUNITY</span><time>SEASONAL</time><h3>Farmers Market and community activities</h3><a href="#community">VIEW COMMUNITY →</a></article>
+      <article><span>CULTURE</span><time>2026–27</time><h3>Performances and programming at Al Larson Cultural Center</h3><a href="#culture">VIEW PROGRAMMING →</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="numbers section">
+  <div class="number-block"><strong>70</strong><span>YEARS OF SCHAUMBURG · 2026</span></div>
+  <div class="number-block"><strong>311</strong><span>24/7 NON-EMERGENCY ASSISTANCE</span></div>
+  <div class="number-block"><strong>3</strong><span>CONNECTED DIGITAL DESTINATIONS</span></div>
+</section>
+
+<section class="cta">
+  <div class="cta-image"></div><div class="cta-overlay"></div>
+  <div class="cta-content">
+    <div class="section-kicker">08 / YOUR SCHAUMBURG</div>
+    <h2>Find what you need.<br><em>Discover what's next.</em></h2>
+    <p>A connected digital experience for residents, businesses, visitors, cultural audiences and investors — designed around how people use Schaumburg.</p>
+    <div class="hero-buttons">
+      <a class="btn btn-green" href="services.html">EXPLORE SERVICES</a>
+      <a class="btn btn-outline" href="#top">BACK TO TOP ↑</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-top">
+    <a class="brand footer-brand" href="index.html" aria-label="Village of Schaumburg home"><img src="assets/images/schaumburg-footer-logo.png" alt="Village of Schaumburg"></a>
+    <p>Your Village. Your Vibe. Your Schaumburg.</p>
+  </div>
+  <div class="footer-links">
+    <div><b>EXPLORE</b><a href="services.html">Services</a><a href="#government">Government</a><a href="#community">Community</a><a href="#news">News &amp; Events</a></div>
+    <div><b>RESIDENTS</b><a href="services.html">Payments</a><a href="services.html">Permits</a><a href="services.html">Customer Service</a><a href="#community">Resources</a></div>
+    <div><b>PORTFOLIO</b><a href="#portfolio">Village of Schaumburg</a><a href="#culture">Al Larson Cultural Center</a><a href="#business">90 North</a><a href="#news">Events</a></div>
+    <div><b>CONNECT</b><a href="#government">Contact &amp; 311</a><a href="#government">Accessibility</a><a href="#government">Website Feedback</a><a href="#government">Public Information</a></div>
+  </div>
+  <div class="footer-credit" aria-label="Compunnel website">
+    <a href="https://www.compunnel.com/" target="_blank" rel="noopener noreferrer" aria-label="Compunnel website">
+      <img src="assets/images/compunnel-logo.svg" alt="Compunnel">
+    </a>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Village of Schaumburg</span><span>Privacy · Accessibility · Sitemap</span></div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

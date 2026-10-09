@@ -1,0 +1,224 @@
+:root{
+  --green:#59B224;
+  --deep-green:#3F8F20;
+  --yellow:#FFFF00;
+  --ink:#111111;
+  --slate:#333333;
+  --body:#444A45;
+  --gray:#72786F;
+  --line:#D9DED7;
+  --soft:#F7F9F4;
+  --soft-green:#EEF4E9;
+  --white:#FFFFFF;
+  --dark:#111111;
+  --dark2:#1D241B;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--soft);color:var(--ink);font-family:Inter,Arial,sans-serif;font-size:16px}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+.site-header{position:fixed;z-index:100;top:0;left:0;width:100%;height:94px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.96);border-bottom:1px solid rgba(17,17,17,.10);box-shadow:0 8px 28px rgba(30,45,25,.08);backdrop-filter:blur(12px);transition:.3s}
+.site-header.scrolled{height:78px;background:rgba(255,255,255,.98);box-shadow:0 10px 30px rgba(30,45,25,.12)}
+.brand{display:flex;align-items:center;gap:11px}
+.brand img{width:150px;height:76px;object-fit:contain;object-position:center}
+.desktop-nav{display:flex;align-items:center;gap:.3vw;height:100%}
+.nav-item{height:100%;position:relative;display:flex;align-items:center}
+.nav-main-link{display:flex;align-items:center;gap:7px;color:var(--ink);font-size:16px;font-weight:800;letter-spacing:.04em;padding:30px 13px;white-space:nowrap}
+.nav-main-link:hover{color:var(--deep-green)}
+.nav-item:hover .mega{display:flex}
+.mega{position:absolute;top:100%;left:-10px;width:270px;padding:22px;background:var(--ink);display:none;flex-direction:column;box-shadow:0 18px 40px rgba(0,0,0,.2)}
+.mega a{padding:11px 0;color:#F4F7F2;font-size:16px}
+.mega a:hover{color:var(--yellow)}
+.header-actions{display:flex;align-items:center;gap:15px}
+.search-trigger{border:0;background:none;color:var(--ink);font-size:16px;font-weight:800;letter-spacing:.08em}
+.search-trigger span{display:inline-block;font-size:25px;line-height:1;margin-left:5px;font-weight:800}
+.header-cta{font-size:16px;font-weight:800;letter-spacing:.08em;background:var(--green);color:#fff;padding:14px 18px}
+.header-cta:hover{background:var(--deep-green)}
+.menu-btn{display:none;background:none;border:0}
+.menu-btn i{display:block;width:27px;height:2px;background:var(--ink);margin:5px}
+.search-panel{position:fixed;inset:0;z-index:150;background:rgba(17,17,17,.98);color:#fff;display:none;align-items:center;padding:8vw}
+.search-panel.open{display:flex}
+.search-inner{max-width:950px;width:100%;position:relative}
+.search-close{position:absolute;right:0;top:-40px;border:0;background:none;color:#fff;font-size:48px}
+.search-inner h2{font:800 clamp(64px,8vw,120px)/.8 'Barlow Condensed';text-transform:uppercase;margin:25px 0 45px}
+.search-inner h2 span{color:var(--yellow)}
+.search-inner form{display:flex;border-bottom:2px solid #fff}
+.search-inner input{flex:1;background:transparent;border:0;color:#fff;font-size:20px;padding:18px 0;outline:none}
+.search-inner form button{background:var(--green);color:#fff;border:0;padding:0 26px;font-weight:800;letter-spacing:.1em;font-size:16px}
+.search-note{color:#c6cbc4;margin-top:18px;font-size:16px}
+.search-result{margin-top:15px;color:#eaffd5;min-height:24px;font-size:16px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+.hero{height:100vh;min-height:780px;position:relative;overflow:hidden;background:#1b2118;color:#fff}
+.hero-image{position:absolute;inset:0;background:url('https://assets.simpleviewinc.com/simpleview/image/upload/c_fill%2Ch_1800%2Cq_90%2Cw_3000/v1/crm/chicagonorthwest/Clock-Tower_BC941821-5056-BF65-D6F5E738C5C62AA8-bc94134e5056bf6_bc941ef1-5056-bf65-d6a0982f10921de1.jpg') center/cover no-repeat;transform:scale(1.02)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.30) 44%,rgba(0,0,0,.05) 100%),linear-gradient(0deg,rgba(0,0,0,.20) 0%,rgba(0,0,0,.05) 60%,transparent 100%)}
+.hero-content{position:absolute;left:6vw;top:54%;transform:translateY(-47%);max-width:930px}
+.eyebrow,.section-kicker{font-size:16px;letter-spacing:.16em;font-weight:800}
+.hero h1{font:800 clamp(74px,9.6vw,152px)/.82 'Barlow Condensed';letter-spacing:-.04em;margin:26px 0;text-transform:uppercase}
+.hero h1 em,.cta h2 em{font-style:normal;color:var(--yellow)}
+.hero-copy{max-width:650px;font-size:19px;line-height:1.6;color:#f2f4ef}
+.hero-search{max-width:760px;margin-top:27px}
+.hero-search label{display:block;font-size:16px;font-weight:700;margin-bottom:9px}
+.hero-search-box{display:flex;background:#fff;border:1px solid rgba(255,255,255,.4);box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.hero-search-box input{flex:1;border:0;outline:0;padding:17px 18px;font-size:16px;color:var(--ink);min-width:0}
+.hero-search-box button{background:var(--green);border:0;color:#fff;padding:0 23px;font-size:16px;font-weight:800;letter-spacing:.08em}
+.hero-search-box button:hover{background:var(--deep-green)}
+.hero-buttons{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 23px;border:1px solid transparent;font-size:16px;font-weight:800;letter-spacing:.06em;transition:.3s}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--deep-green);transform:translateY(-3px)}
+.btn-light{border-color:#fff;color:#fff;background:transparent}
+.btn-light:hover{background:#fff;color:var(--ink)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--deep-green)}
+.hero-badge{position:absolute;right:6vw;bottom:7vw;width:155px;height:155px;border:1px solid rgba(255,255,255,.7);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-7deg);background:rgba(0,0,0,.22);backdrop-filter:blur(3px)}
+.hero-badge span{font:700 16px 'Barlow Condensed';letter-spacing:.12em}
+.hero-badge b{font:800 54px/.9 'Barlow Condensed';color:var(--yellow)}
+.hero-badge small{font-size:16px;font-weight:700;letter-spacing:.08em;margin-top:5px}
+.hero-scroll{position:absolute;right:2.8vw;bottom:42px;font-size:16px;letter-spacing:.13em;writing-mode:vertical-rl}
+.hero-scroll span{display:block;width:1px;height:55px;background:#fff;margin-top:12px}
+
+.section{padding:112px 6vw}
+.quick{background:var(--white)}
+.quick-head{display:grid;grid-template-columns:1.05fr .95fr;gap:5vw;align-items:stretch;margin:32px 0 46px}
+.quick h2,.section-head h2,.split-copy h2,.community h2,.news h2,.culture h2{font:800 clamp(62px,7.4vw,115px)/.8 'Barlow Condensed';letter-spacing:-.035em;text-transform:uppercase;margin:0}
+.quick h2 span,.section-head h2 span,.split-copy h2 span,.community h2 span,.news h2 span,.culture h2 span{color:var(--green)}
+.quick-head p,.section-head p,.split-copy p,.community-copy p,.culture-copy p{font-size:18px;line-height:1.75;color:var(--body);max-width:570px}
+.quick-image{min-height:300px;background:url('https://media-production.lp-cdn.com/cdn-cgi/image/format%3Dauto%2Cquality%3D85%2Cfit%3Dscale-down%2Cwidth%3D1280/https%3A/media-production.lp-cdn.com/media/qppc74gapfglfxr3uj2t') center/cover no-repeat;position:relative}
+.quick-image:after,.community-image:after,.culture-image:after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.7);pointer-events:none}
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.quick-card{display:grid;grid-template-columns:38px 1fr 25px;gap:15px;align-items:start;padding:28px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.3s}
+.quick-card:hover{background:var(--ink);color:#fff}
+.quick-card>span,.service-card>div>span,.portfolio-body>span{font:600 16px 'Barlow Condensed';color:var(--green)}
+.quick-card div{display:flex;flex-direction:column;gap:8px}
+.quick-card b{font:800 21px/.95 'Barlow Condensed'}
+.quick-card small{font-size:16px;line-height:1.45;color:var(--gray)}
+.quick-card:hover small{color:#cbd0c9}
+.quick-card i{font-style:normal;color:var(--green);font-size:24px}
+
+.services{background:var(--soft)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:50px;margin-bottom:55px}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.service-card{min-height:390px;background:#fff;padding:28px;display:flex;flex-direction:column;border-top:4px solid var(--ink);position:relative;overflow:hidden;transition:.4s}
+.service-card:after{content:"";position:absolute;inset:auto 0 0;height:6px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:.4s}
+.service-card:hover{background:var(--ink);color:#fff;transform:translateY(-8px)}
+.service-card:hover:after{transform:scaleX(1)}
+.service-icon{width:52px;height:52px;border:1px solid var(--line);display:grid;place-items:center;color:var(--green);font-size:24px;margin-bottom:auto}
+.service-card h3{font:800 43px/.86 'Barlow Condensed';margin:10px 0}
+.service-card p{font-size:16px;line-height:1.55;color:var(--body);max-width:390px}
+.service-card:hover p{color:#c7cdc5}
+.service-card a{font-size:16px;font-weight:800;letter-spacing:.09em;margin-top:24px}
+
+.split-feature{display:grid;grid-template-columns:1fr 1fr;min-height:720px;background:var(--ink);color:#fff}
+.split-image{min-height:520px;background-position:center;background-size:cover}
+.government-image{background-image:url('https://imengine.public.prod.pdh.navigacloud.com/?function=cover&height=609&type=preview&uuid=5f06cbc4-f70b-5d57-b473-6cc4f5dba7ca&width=800')}
+.split-copy{padding:100px 7vw;display:flex;flex-direction:column;justify-content:center}
+.split-copy h2{margin:30px 0}
+.split-copy p{color:#d2d7d0}
+.feature-links{margin-top:35px;border-top:1px solid #ffffff30}
+.feature-links a{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid #ffffff30;font-size:16px;font-weight:800;letter-spacing:.06em}
+.feature-links a:hover{color:var(--yellow)}
+
+.portfolio{background:#E9EDE6}
+.dark-head p{color:#50564f}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.portfolio-card{background:#fff;min-height:570px;display:flex;flex-direction:column;overflow:hidden}
+.portfolio-image{height:300px;background-position:center;background-size:cover}
+.village-image{background-image:url('https://files.constantcontact.com/3e0e075c001/8916c5cd-6ed8-4aae-b541-3fb7ea0b5635.jpg')}
+.culture-image{background-image:url('https://www.prairiecenter.org/home/showpublishedimage/8277/639178159069130000')}
+.business-image{background-image:url('https://judicious-fox.files.svdcdn.com/site_images/Copy-of-Boler1.png')}
+.portfolio-body{padding:28px;display:flex;flex-direction:column;flex:1}
+.portfolio-body h3{font:800 38px/.9 'Barlow Condensed';margin:13px 0 18px}
+.portfolio-body p{font-size:16px;line-height:1.55;color:var(--body);margin-top:0}
+.portfolio-body a{margin-top:auto;font-size:16px;font-weight:800;letter-spacing:.08em}
+.portfolio-body a:hover{color:var(--deep-green)}
+
+.community{display:grid;grid-template-columns:1.1fr .9fr;gap:0;background:#fff;padding:0}
+.community-image{min-height:650px;background:url('https://files.constantcontact.com/3e0e075c001/8916c5cd-6ed8-4aae-b541-3fb7ea0b5635.jpg') center/cover;position:relative}
+.community-copy{padding:100px 7vw;display:flex;flex-direction:column;justify-content:center}
+.community-copy h2{margin:30px 0}
+.audience-links{border-top:1px solid var(--line);margin-top:30px}
+.audience-links a{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--line);font-size:16px;font-weight:800;letter-spacing:.08em}
+.audience-links a:hover{color:var(--deep-green)}
+
+.culture{background:var(--soft-green)}
+.culture-grid{display:grid;grid-template-columns:.9fr 1.1fr;min-height:620px;background:#fff}
+.culture-copy{padding:80px 7vw;display:flex;flex-direction:column;justify-content:center}
+.culture-copy h2{margin:30px 0}
+.culture-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.culture-image{min-height:520px;background:url('https://www.prairiecenter.org/home/showpublishedimage/8145/639154091892430000') center/cover;position:relative}
+
+.news{background:var(--soft)}
+.news-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:35px}
+.news-card{background:#fff}
+.news-image{height:330px;background-size:cover;background-position:center}
+.news-image.festival{background-image:url('https://www.gigawattcoffeeroasters.com/cdn/shop/articles/schaumburg-farmers-market-tents_60395164-e735-4aa6-a41e-03200b808b86.jpg?v=1781125162')}
+.news-body{padding:30px}
+.news-body>span,.event-list article>span{font-size:16px;font-weight:800;letter-spacing:.1em;color:var(--deep-green)}
+.news-body h3{font:700 32px/1 'Barlow Condensed';margin:15px 0 35px}
+.news-body a,.event-list a{font-size:16px;font-weight:800;letter-spacing:.08em}
+.event-list{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.event-list article{padding:25px 0;border-bottom:1px solid var(--line)}
+.event-list time{float:right;font-size:16px;font-weight:800;color:var(--gray);letter-spacing:.06em}
+.event-list h3{font:700 28px/1 'Barlow Condensed';margin:15px 0 25px;max-width:430px}
+
+.numbers{background:var(--ink);color:#fff;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;padding-top:80px;padding-bottom:80px}
+.number-block{padding:30px;border-left:1px solid #ffffff25}
+.number-block strong{display:block;font:800 clamp(70px,9vw,135px)/.75 'Barlow Condensed';color:var(--yellow)}
+.number-block span{display:block;margin-top:12px;font-size:16px;line-height:1.4;letter-spacing:.12em;color:#b9c0b6}
+
+.cta{min-height:390px;position:relative;display:flex;align-items:center;color:var(--ink);overflow:hidden;background:var(--soft-green);padding:76px 6vw;border-top:1px solid rgba(17,17,17,.08);border-bottom:1px solid rgba(17,17,17,.08)}
+.cta::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 84% 28%,rgba(89,178,36,.12) 0 2px,transparent 3px),radial-gradient(circle at 84% 28%,transparent 0 92px,rgba(63,143,32,.12) 93px 94px,transparent 95px),radial-gradient(circle at 84% 28%,transparent 0 126px,rgba(63,143,32,.08) 127px 128px,transparent 129px),linear-gradient(135deg,transparent 0 70%,rgba(89,178,36,.055) 70% 70.3%,transparent 70.3% 76%,rgba(89,178,36,.055) 76% 76.3%,transparent 76.3%)}
+.cta-image,.cta-overlay{display:none}
+.cta-content{position:relative;z-index:2;margin:0;max-width:980px}
+.cta .section-kicker{color:var(--deep-green)}
+.cta h2{font:800 clamp(48px,6.3vw,88px)/.9 'Barlow Condensed';text-transform:uppercase;margin:22px 0;letter-spacing:-.025em}
+.cta h2 em{color:var(--deep-green)}
+.cta p{max-width:650px;font-size:18px;line-height:1.65;color:#3f473d}
+.cta .btn-outline{border-color:var(--ink);color:var(--ink);background:transparent}
+.cta .btn-outline:hover{background:var(--ink);color:#fff}
+
+footer{background:#0D120C;color:#dfe5dc;padding:70px 6vw 25px}
+.footer-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff20;padding-bottom:40px}
+.footer-brand img{width:150px;height:78px;object-fit:contain}
+.footer-top>p{font-size:16px;color:#aeb6aa}
+.footer-links{display:grid;grid-template-columns:repeat(4,1fr);gap:45px;padding:45px 0}
+.footer-links div{display:flex;flex-direction:column;gap:12px}
+.footer-links b{font-size:16px;letter-spacing:.12em;color:#8e9989;margin-bottom:7px}
+.footer-links a{font-size:16px}
+.footer-links a:hover{color:var(--yellow)}
+.footer-credit{border-top:1px solid #ffffff20;padding:22px 0 18px;display:flex;align-items:center;justify-content:flex-end;gap:14px;color:#fff;font-size:14px}
+.footer-credit a{display:inline-flex;align-items:center}
+.footer-credit img{width:180px;height:auto;display:block;filter:none}
+.footer-bottom{border-top:1px solid #ffffff20;padding-top:20px;display:flex;justify-content:space-between;color:#7f897b;font-size:14px}
+
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:1250px){
+  .desktop-nav{gap:0}.nav-main-link{font-size:14px;padding-left:9px;padding-right:9px}.quick-grid{grid-template-columns:repeat(2,1fr)}
+  .service-grid,.portfolio-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:1000px){
+  .desktop-nav,.header-cta,.search-trigger{display:none}.menu-btn{display:block}
+  .site-header{height:78px;padding-left:6vw;padding-right:6vw}
+  .brand img{width:132px;height:66px}
+  .hero-content{left:6vw;right:6vw}.hero h1{font-size:clamp(68px,13.6vw,124px)}
+  .hero-badge{display:none}
+  .quick-head,.section-head,.split-feature,.community,.news-grid,.culture-grid{grid-template-columns:1fr;display:grid}
+  .section{padding:85px 6vw}.split-image{min-height:440px}.split-copy{padding:80px 6vw}
+  .community-image{min-height:440px}.community-copy{padding:80px 6vw}.culture-image{min-height:440px}
+  .cta-content{margin-left:6vw;margin-right:6vw}.numbers{grid-template-columns:1fr}.footer-links{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .brand img{width:118px;height:60px}
+  .hero{min-height:820px}.hero-copy{font-size:17px}.hero-search-box{display:block;background:transparent;box-shadow:none}
+  .hero-search-box input{width:100%;margin-bottom:8px}.hero-search-box button{width:100%;height:52px}
+  .quick-grid,.service-grid,.portfolio-grid,.footer-links{grid-template-columns:1fr}
+  .quick h2,.section-head h2,.split-copy h2,.community h2,.news h2,.culture h2{font-size:64px}
+  .service-card{min-height:350px}.footer-top{display:block}.footer-credit{justify-content:flex-start}.footer-bottom{display:block;line-height:2}
+  .search-inner input{font-size:16px}.search-inner form button{padding:0 14px}
+  .cta{min-height:560px}
+}

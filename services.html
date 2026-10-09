@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Village of Schaumburg services — find permits, payments, requests, documents, meetings and everyday resources.">
+  <title>Services | Village of Schaumburg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root{--green:#59B224;--deep-green:#3F8F20;--yellow:#FFFF00;--black:#111111;--soft:#F7F9F4;--line:#D9DED7}
+    .page-hero{position:relative;min-height:560px;display:grid;align-items:end;overflow:hidden;background:#10200d;color:#fff;padding:130px 6vw 72px}
+    .page-hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.70) 0%,rgba(0,0,0,.48) 48%,rgba(0,0,0,.18) 100%),linear-gradient(0deg,rgba(0,0,0,.48) 0%,rgba(0,0,0,.18) 58%,rgba(0,0,0,.08) 100%),url('https://imengine.public.prod.pdh.navigacloud.com/?function=original&type=preview&uuid=6642bbe7-995d-5401-ad18-b707edee607c') center/cover no-repeat;transform:scale(1.02)}
+    .page-hero-content{position:relative;z-index:1;max-width:900px}
+    .breadcrumb{display:flex;gap:10px;align-items:center;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;color:#e7f1e2}
+    .breadcrumb a{color:#fff;text-decoration:none}.breadcrumb span{opacity:.55}
+    .page-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(64px,9vw,132px);line-height:.84;text-transform:uppercase;margin:0 0 24px;letter-spacing:-.03em}
+    .page-hero h1 span{color:var(--yellow)}
+    .page-hero p{max-width:690px;font-size:19px;line-height:1.65;color:#eef3eb;margin:0}
+    .service-search-wrap{margin-top:-48px;position:relative;z-index:4;padding:0 6vw}
+    .service-search{background:#fff;box-shadow:0 24px 60px rgba(17,17,17,.14);padding:28px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:end}
+    .service-search label{grid-column:1/-1;font-size:16px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .service-search input{height:62px;border:1px solid #cdd4ca;padding:0 20px;font:500 17px Inter,sans-serif;outline:none}
+    .service-search input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(89,178,36,.15)}
+    .service-search button{height:62px;padding:0 28px;border:0;background:var(--green);color:#fff;font:800 16px Inter,sans-serif;letter-spacing:.06em;cursor:pointer}
+    .service-search button:hover{background:var(--deep-green)}
+    .service-results{display:none;grid-column:1/-1;padding:16px 18px;background:var(--soft);border-left:4px solid var(--green);font-size:16px;line-height:1.55}
+    .service-results.show{display:block}
+    .service-section{padding:100px 6vw}
+    .service-section.alt{background:var(--soft)}
+    .service-intro{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:44px}
+    .service-intro h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,6vw,86px);line-height:.9;text-transform:uppercase;margin:0;letter-spacing:-.02em}
+    .service-intro h2 span{color:var(--green)}
+    .service-intro p{font-size:17px;line-height:1.75;max-width:620px;margin:0}
+    .service-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service-page-card{position:relative;min-height:280px;padding:32px;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s,box-shadow .25s,border-color .25s}
+    .service-page-card:hover{transform:translateY(-6px);box-shadow:0 20px 42px rgba(40,60,35,.11);border-color:var(--green)}
+    .service-page-card .num{font-size:14px;font-weight:800;color:var(--deep-green);letter-spacing:.1em}
+    .service-page-card h3{font-family:'Barlow Condensed',sans-serif;font-size:38px;line-height:.95;text-transform:uppercase;margin:22px 0 12px}
+    .service-page-card p{font-size:16px;line-height:1.6;margin:0;color:#444}
+    .service-page-card a{margin-top:26px;color:#111;font-size:15px;font-weight:800;letter-spacing:.07em;text-decoration:none}
+    .service-page-card a:hover{color:var(--deep-green)}
+    .category-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .category{background:#fff;border:1px solid var(--line);padding:34px;display:grid;grid-template-columns:1fr 1.35fr;gap:28px}
+    .category h3{font-family:'Barlow Condensed',sans-serif;font-size:42px;line-height:.95;text-transform:uppercase;margin:0}
+    .category p{margin:0 0 18px;font-size:16px;line-height:1.6;color:#4d554b}
+    .category ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+    .category li a{font-size:16px;font-weight:700;color:#111;text-decoration:none;border-bottom:1px solid #d7ddd3;padding-bottom:8px;display:block}
+    .category li a:hover{color:var(--green);border-color:var(--green)}
+    .task-feature{display:grid;grid-template-columns:1fr 1fr;min-height:570px;background:#111;color:#fff;overflow:hidden}
+    .task-image{background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.18)),url('https://il-photos.s3.us-east-2.amazonaws.com/MRD12199887/MRD12199887_0.jpg') center/cover no-repeat;min-height:570px}
+    .task-copy{padding:68px;display:flex;flex-direction:column;justify-content:center}
+    .task-copy .section-kicker{color:#a9bd9f}
+    .task-copy h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(54px,6vw,88px);line-height:.88;text-transform:uppercase;margin:16px 0 22px}
+    .task-copy h2 span{color:var(--yellow)}
+    .task-copy p{font-size:17px;line-height:1.7;color:#d8dfd5;max-width:570px}
+    .steps{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+    .steps li{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid #ffffff22;font-size:16px;font-weight:700}
+    .steps b{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;font-size:14px}
+    .help{background:var(--green);color:#fff;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;padding:70px 6vw;align-items:center;position:relative;isolation:isolate;overflow:hidden}.help::before{content:"";position:absolute;z-index:-1;width:460px;height:460px;right:5%;top:50%;transform:translateY(-50%);border:1px solid rgba(255,255,255,.28);border-radius:50%;box-shadow:0 0 0 34px rgba(255,255,255,.055),0 0 0 78px rgba(255,255,255,.045),0 0 0 126px rgba(255,255,255,.035);pointer-events:none}.help::after{content:"";position:absolute;z-index:-1;width:210px;height:210px;right:calc(5% + 125px);top:50%;transform:translateY(-50%) rotate(45deg);border:1px solid rgba(255,255,255,.25);border-radius:42px;background:linear-gradient(135deg,rgba(255,255,255,.08),transparent 60%);pointer-events:none}.help>div{position:relative;z-index:1}.help-actions{position:relative;z-index:1}
+    .help h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,6vw,82px);line-height:.9;text-transform:uppercase;margin:0 0 16px}
+    .help p{font-size:17px;line-height:1.65;max-width:680px;margin:0;color:#eff8ea}
+    .help-actions{display:flex;justify-content:flex-end;gap:12px;flex-wrap:wrap}
+    .help .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;text-decoration:none;font-weight:800;font-size:15px;letter-spacing:.06em}
+    .help .btn-light{background:#fff;color:#111}.help .btn-dark{background:#111;color:#fff}
+    @media(max-width:900px){.service-intro,.task-feature,.help{grid-template-columns:1fr}.service-card-grid{grid-template-columns:1fr 1fr}.category-grid{grid-template-columns:1fr}.task-image{min-height:360px}.task-copy{padding:48px 6vw}.help-actions{justify-content:flex-start}}
+    @media(max-width:620px){.help::before{width:300px;height:300px;right:-115px;opacity:.8}.help::after{width:130px;height:130px;right:-15px}.page-hero{min-height:520px;padding-top:120px}.service-search{grid-template-columns:1fr;padding:20px}.service-search input,.service-search button{width:100%}.service-card-grid{grid-template-columns:1fr}.category{grid-template-columns:1fr}.category ul{grid-template-columns:1fr}.service-section{padding-top:70px;padding-bottom:70px}.page-hero h1{font-size:68px}}
+  </style>
+</head>
+<body>
+<header class="site-header" id="header">
+  <a class="brand" href="index.html" aria-label="Village of Schaumburg home"><img src="assets/images/schaumburg-logo.png" alt="Village of Schaumburg"></a>
+  <nav class="desktop-nav" aria-label="Main navigation">
+    <div class="nav-item"><a class="nav-main-link" href="services.html">SERVICES <span>+</span></a><div class="mega"><a href="#popular">Popular Services</a><a href="#categories">Browse Services</a><a href="#permit">Permit Journey</a><a href="#help">Need Help?</a></div></div>
+    <div class="nav-item"><a class="nav-main-link" href="index.html#government">GOVERNMENT <span>+</span></a><div class="mega"><a href="index.html#government">Village Board</a><a href="index.html#government">Meetings &amp; Agendas</a><a href="index.html#government">Departments</a><a href="index.html#government">Transparency</a></div></div>
+    <div class="nav-item"><a class="nav-main-link" href="index.html#community">COMMUNITY <span>+</span></a><div class="mega"><a href="index.html#community">Residents</a><a href="index.html#community">Parks &amp; Recreation</a><a href="index.html#community">Resources</a><a href="index.html#community">New Residents</a></div></div>
+    <div class="nav-item"><a class="nav-main-link" href="index.html#portfolio">EXPLORE <span>+</span></a><div class="mega"><a href="index.html#portfolio">Al Larson Cultural Center</a><a href="index.html#portfolio">90 North</a><a href="index.html#news">Events</a><a href="index.html#community">Places to Explore</a></div></div>
+    <div class="nav-item"><a class="nav-main-link" href="index.html#business">BUSINESS</a></div>
+  </nav>
+  <div class="header-actions"><button class="search-trigger" id="searchTrigger" aria-label="Open site search">SEARCH <span>⌕</span></button><a class="header-cta" href="services.html">SERVICE HUB</a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button></div>
+</header>
+
+<div class="search-panel" id="searchPanel" aria-hidden="true"><div class="search-inner"><button class="search-close" id="searchClose" aria-label="Close search">×</button><p class="eyebrow">VILLAGE OF SCHAUMBURG INFORMATION SEARCH</p><h2>What can we<br><span>help you find?</span></h2><form id="searchForm"><label class="sr-only" for="siteSearch">Search Schaumburg</label><input id="siteSearch" type="search" placeholder="Search services, documents, meetings, events…" autocomplete="off"><button type="submit">SEARCH →</button></form><p class="search-note">Search across Village information, services, documents, events and news.</p><div id="searchResult" class="search-result" aria-live="polite"></div></div></div>
+
+<main id="top">
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Services</span></div>
+    <div class="section-kicker" style="color:#dcebd5">VILLAGE SERVICES</div>
+    <h1>Get things<br><span>done.</span></h1>
+    <p>Find services, complete everyday tasks, access public information and connect with the Village — without needing to know which department manages it.</p>
+  </div>
+</section>
+
+<section class="service-search-wrap" aria-label="Service search">
+  <form class="service-search" id="serviceSearchForm">
+    <label for="serviceSearch">What do you need to do?</label>
+    <input id="serviceSearch" type="search" placeholder="Try “water bill”, “permit”, “parking” or “report a problem”">
+    <button type="submit">SEARCH SERVICES →</button>
+    <div id="serviceResults" class="service-results" aria-live="polite"></div>
+  </form>
+</section>
+
+<section class="service-section" id="popular">
+  <div class="service-intro"><div><div class="section-kicker">01 / POPULAR TASKS</div><h2>Start with<br><span>what you need.</span></h2></div><p>High-priority tasks are surfaced first so residents can get to the action quickly. The structure follows the RFP's task-oriented information architecture rather than a department-first model.</p></div>
+  <div class="service-card-grid">
+    <article class="service-page-card"><div><span class="num">01</span><h3>Pay a<br>Bill</h3><p>Find Village payment resources and get to the appropriate online payment service.</p></div><a href="#help">START →</a></article>
+    <article class="service-page-card"><div><span class="num">02</span><h3>Get a<br>Permit</h3><p>Choose a permit, understand requirements and move to the correct application journey.</p></div><a href="#permit">FIND A PERMIT →</a></article>
+    <article class="service-page-card"><div><span class="num">03</span><h3>Report an<br>Issue</h3><p>Submit a Customer Service Request for a non-emergency Village issue.</p></div><a href="#help">REPORT →</a></article>
+    <article class="service-page-card"><div><span class="num">04</span><h3>Find a<br>Form</h3><p>Locate commonly used forms and supporting information without searching by department.</p></div><a href="#categories">BROWSE →</a></article>
+    <article class="service-page-card"><div><span class="num">05</span><h3>Find a<br>Meeting</h3><p>Access upcoming meetings, agendas, minutes and public information.</p></div><a href="index.html#government">VIEW →</a></article>
+    <article class="service-page-card"><div><span class="num">06</span><h3>Find a<br>Document</h3><p>Search public records, reports, ordinances, resolutions and meeting materials.</p></div><a href="index.html#government">SEARCH →</a></article>
+  </div>
+</section>
+
+<section class="service-section alt" id="categories">
+  <div class="service-intro"><div><div class="section-kicker">02 / BROWSE SERVICES</div><h2>Choose a<br><span>path.</span></h2></div><p>Users can browse by the job they are trying to accomplish while still reaching department-owned information when needed.</p></div>
+  <div class="category-grid">
+    <article class="category"><div><h3>Live &amp;<br>Residential</h3></div><div><p>Everyday resources for residents, homes and neighborhoods.</p><ul><li><a href="#permit">Permits &amp; inspections</a></li><li><a href="#help">Utilities &amp; billing</a></li><li><a href="#help">Parking</a></li><li><a href="#help">Waste &amp; recycling</a></li><li><a href="#help">Customer service</a></li><li><a href="#help">Forms</a></li></ul></div></article>
+    <article class="category"><div><h3>Business &amp;<br>Development</h3></div><div><p>Resources for businesses, developers and economic activity.</p><ul><li><a href="index.html#business">Economic development</a></li><li><a href="#permit">Business permits</a></li><li><a href="#help">Licenses</a></li><li><a href="index.html#business">Development opportunities</a></li><li><a href="index.html#business">90 North</a></li><li><a href="#help">Business resources</a></li></ul></div></article>
+    <article class="category"><div><h3>Government &amp;<br>Transparency</h3></div><div><p>Understand Village government and access public information.</p><ul><li><a href="index.html#government">Village Board</a></li><li><a href="index.html#government">Meetings &amp; agendas</a></li><li><a href="index.html#government">Agendas &amp; minutes</a></li><li><a href="index.html#government">FOIA</a></li><li><a href="index.html#government">Documents &amp; records</a></li><li><a href="index.html#government">Departments</a></li></ul></div></article>
+    <article class="category"><div><h3>Community &amp;<br>Culture</h3></div><div><p>Discover programs, recreation, events and cultural experiences.</p><ul><li><a href="index.html#community">Parks &amp; recreation</a></li><li><a href="index.html#news">Events</a></li><li><a href="index.html#portfolio">Al Larson Cultural Center</a></li><li><a href="index.html#community">Community programs</a></li><li><a href="index.html#community">Public safety</a></li><li><a href="index.html#portfolio">Things to do</a></li></ul></div></article>
+  </div>
+</section>
+
+<section class="service-section" id="permit">
+  <div class="task-feature">
+    <div class="task-image"></div>
+    <div class="task-copy"><div class="section-kicker">03 / TASK JOURNEY</div><h2>Need a<br><span>permit?</span></h2><p>Make the path clear before sending users into an application system. The proposed journey reduces uncertainty by showing requirements, documents and next steps up front.</p><ol class="steps"><li><b>01</b><span>Choose the permit you need</span></li><li><b>02</b><span>Review requirements and documents</span></li><li><b>03</b><span>Prepare your application</span></li><li><b>04</b><span>Apply through the appropriate system</span></li><li><b>05</b><span>Understand what happens next</span></li></ol></div>
+  </div>
+</section>
+
+<section class="help" id="help">
+  <div><div class="section-kicker" style="color:#e8f7e0">04 / NEED HELP?</div><h2>We're here<br>to help.</h2><p>Use Village assistance channels when you need support finding a service or completing a task. The future experience can also connect responsible AI assistance with search and service navigation.</p></div>
+  <div class="help-actions"><a class="btn btn-light" href="index.html#government">CONTACT &amp; 311</a><a class="btn btn-dark" href="index.html">BACK TO HOME</a></div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-top"><a class="brand footer-brand" href="index.html" aria-label="Village of Schaumburg home"><img src="assets/images/schaumburg-footer-logo.png" alt="Village of Schaumburg"></a><p>Your Village. Your Vibe. Your Schaumburg.</p></div>
+  <div class="footer-links"><div><b>EXPLORE</b><a href="services.html">Services</a><a href="index.html#government">Government</a><a href="index.html#community">Community</a><a href="index.html#news">News &amp; Events</a></div><div><b>RESIDENTS</b><a href="services.html#popular">Payments</a><a href="services.html#permit">Permits</a><a href="services.html#help">Customer Service</a><a href="services.html#categories">Resources</a></div><div><b>PORTFOLIO</b><a href="index.html#portfolio">Village of Schaumburg</a><a href="index.html#culture">Al Larson Cultural Center</a><a href="index.html#business">90 North</a><a href="index.html#news">Events</a></div><div><b>CONNECT</b><a href="index.html#government">Contact &amp; 311</a><a href="index.html#government">Accessibility</a><a href="index.html#government">Website Feedback</a><a href="index.html#government">Public Information</a></div></div>
+  <div class="footer-credit" aria-label="Compunnel website"><a href="https://www.compunnel.com/" target="_blank" rel="noopener noreferrer" aria-label="Compunnel website"><img src="assets/images/compunnel-logo.svg" alt="Compunnel"></a></div>
+  <div class="footer-bottom"><span>© 2026 Village of Schaumburg</span><span>Privacy · Accessibility · Sitemap</span></div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+(function(){
+  const form=document.getElementById('serviceSearchForm');
+  const input=document.getElementById('serviceSearch');
+  const result=document.getElementById('serviceResults');
+  if(form&&input&&result){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      const q=input.value.trim();
+      if(!q){result.classList.remove('show');result.textContent='';return;}
+      const map=[['permit','Permits & inspections'],['bill','Payments & billing'],['pay','Payments & billing'],['parking','Parking'],['problem','Customer service / report an issue'],['issue','Customer service / report an issue'],['meeting','Meetings & agendas'],['agenda','Meetings & agendas'],['document','Documents & records'],['form','Forms'],['business','Business & development'],['recycl','Waste & recycling']];
+      const match=map.find(x=>q.toLowerCase().includes(x[0]));
+      result.innerHTML=match?'<strong>Suggested service:</strong> '+match[1]+' &nbsp; <a href="#categories">Explore →</a>':'<strong>Search suggestion:</strong> Try a task such as “permit”, “water bill”, “parking”, “meeting” or “report a problem”.';
+      result.classList.add('show');
+    });
+  }
+})();
+</script>
+</body>
+</html>
